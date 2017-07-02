@@ -1,0 +1,10 @@
+
+th{
+	border-collapse: collapse;
+	background-color:#eaf5ff;
+}
+td{
+	background-color:#4bacff;
+	text-align:center;
+	padding: 5px;
+}

@@ -1,0 +1,33 @@
+var machineData=[{
+	value:'0',
+	text:'软件损坏',
+	children:[{
+		value:'01',
+		text:'经常性死机'		
+	},{
+		value:'02',
+		text:'不能开机'
+	},{
+		value:'03',
+		text:'反复重启'
+	},{
+		value:'04',
+		text:'不能正常上网'
+	},{
+		value:'05',
+		text:'蓝屏'
+	}]
+},{
+	value:'1',
+	text:'硬件损坏',
+	children:[{
+			value:'11',
+		text:'显示器损坏'		
+	},{
+		value:'',
+		text:'不能开机'
+	},{
+		value:'13',
+		text:'鼠标损坏'
+	}]
+}]
