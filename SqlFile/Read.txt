@@ -1,0 +1,6 @@
+1.数据库名称 machine
+2.mysql 密码 123456
+3.提交标准网址：http://localhost:8080/RepairMachine/index.jsp?action=add&location=实验二&classroom=506&machnumb=1
+4.维修标准网址
+：http://localhost:8080/RepairMachine/repair.jsp
+5.
