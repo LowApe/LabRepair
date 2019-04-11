@@ -195,5 +195,17 @@ public class UserDao {
 		
 		return false;
 	}
-
+	public static class TestUserDao{
+		public static void main(String[] args) {
+			System.out.println(getMachines());
+			ArrayList<String> list = new ArrayList<String>();
+			list.add(0, null);
+			list.add(1, null);
+			list.add(2, null);
+			list.add(3, null);
+			list.add(4,null);
+			list.add(5,null);
+			System.out.println(UserDao.insertInfo(list));
+		}
+	}
 }

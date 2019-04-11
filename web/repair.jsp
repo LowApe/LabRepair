@@ -1,8 +1,10 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="dao.RepairDao"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="dao.UserDao,dao.RepairDao,bean.Info"%>
+<%@ page import="bean.Info" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="dao.UserDao" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,12 +26,14 @@
 				<th>操作</th>
 			</tr>
 			<% 
-				ArrayList<Info> list=new ArrayList<Info>();
-				list=UserDao.getMachines();
+				List<Info> list = new ArrayList<Info>();
+				list= UserDao.getMachines();
+
 				for(int i=0;i<list.size();i++){
 					Info info=list.get(i);
 			%>
 			<tr>
+
 				<td><%=info.getLocation() %></td>
 				<td><%=info.getClassRoom() %></td>
 				<td><%=info.getMachNumb() %></td>
@@ -46,5 +50,6 @@
 				}
 			%>
 		</table>
+	123<%= list%>
 </body>
 </html>

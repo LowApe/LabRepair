@@ -18,12 +18,12 @@
 		request.setCharacterEncoding("utf-8");
 
 		//获取?后面的参数
-		String location = new String(request.getParameter("location").getBytes("ISO-8859-1"), "utf-8");
-		String classRoom = new String(request.getParameter("classroom").getBytes("ISO-8859-1"), "utf-8");
-		String machNumb = new String(request.getParameter("machnumb").getBytes("ISO-8859-1"), "utf-8");
-		String resultShowType = new String(request.getParameter("errortype").getBytes("ISO-8859-1"), "utf-8");
-		String resultShowCause = new String(request.getParameter("errorcause").getBytes("ISO-8859-1"), "utf-8");
-		String resultShowDesc = new String(request.getParameter("describe").getBytes("ISO-8859-1"), "utf-8");
+		String location = request.getParameter("location");
+		String classRoom = request.getParameter("classroom");
+		String machNumb = request.getParameter("machnumb");
+		String resultShowType = request.getParameter("errortype");
+		String resultShowCause = request.getParameter("errorcause");
+		String resultShowDesc = request.getParameter("describe");
 		
 		String action = request.getParameter("action");
 		//显示到console命令下显示
@@ -37,24 +37,25 @@
 		list.add(4,resultShowCause);
 		list.add(5,resultShowDesc);
 
-		//查看是否重复插入
-		Info result = UserDao.checkInfo(machNumb);
-		if ("add".equals(action)) {
-			if (result == null) {
-
-				if (UserDao.insertInfo(list)) {
-					request.getRequestDispatcher("submit_sucess.jsp").forward(request, response);
-				} else {
-					//未插入成功
-					response.sendRedirect("submit_failtrue.jsp");
-				}
-
-			} else {
-				//已存在
-
-				response.sendRedirect("submit_failtrue.jsp");
-			}
-		}
+//		//查看是否重复插入
+//		UserDao.insertInfo(list);
+//		Info result = UserDao.checkInfo(machNumb);
+//		if ("add".equals(action)) {
+//			if (result == null) {
+//
+//				if (UserDao.insertInfo(list)) {
+//					request.getRequestDispatcher("submit_sucess.jsp").forward(request, response);
+//				} else {
+//					//未插入成功
+//					response.sendRedirect("submit_failtrue.jsp");
+//				}
+//
+//			} else {
+//				//已存在
+//
+//				response.sendRedirect("submit_failtrue.jsp");
+//			}
+//		}
 
 		if ("delete".equals(action)) {
 
@@ -74,5 +75,7 @@
 			}
 		}
 	%>
+
+<h1>123<%= list%></h1>
 </body>
 </html>

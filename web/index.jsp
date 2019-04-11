@@ -40,7 +40,8 @@ h1 {
 
 <body>
 <%
-		String location = new String(request.getParameter("location").getBytes("ISO-8859-1"), "utf-8");
+		request.setCharacterEncoding("utf-8");
+		String location = request.getParameter("location");
 %>
 	<header class="mui-bar mui-bar-nav"> <a
 		class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
@@ -53,7 +54,7 @@ h1 {
 				<div class="devicesInfo">
 					<h1>设备信息</h1>
 					<b>地点：
-						<div id="location" name="location"><%=location %></div>
+						<div id="location" name="location"><%= location %></div>
 					</b> <br> <b>教室:
 						<div id="classroom" name="classroom"></div>
 					</b> <br> <b>机器型号:
